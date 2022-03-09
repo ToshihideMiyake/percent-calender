@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, viewport-fit=cover">
+    <link rel="stylesheet" href="destyle.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="SpeedFlex.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" href="favicon.ico">
+    <link rel="manifest" href="favicon/manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#db6ed7">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#141414">
+    <script src="https://kit.fontawesome.com/57148d5cd1.js" crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
+    <title>%カレンダー</title>
+</head>
+<body class="bg-color" id="body">
+    <section class="title flex a-center j-center">
+            <h1>年間%カレンダー</h1>
+    </section>
+    <main class="flex column a-center j-center">
+        <section class="date flex a-center j-center">
+            <time>
+                <span class="year"></span>年
+                <span id="month"></span>月
+                <span id="date"></span>日
+                <span id="day"></span>
+            </time>
+        </section>
+        <section class="graph flex j-center a-center">
+            <div class="chart flex j-center a-center" id="chart">
+                <div class="number flex j-center a-center bg-color">
+                    <span id="number"></span>
+                </div>
+            </div>
+        </section>
+        <section class="leftover flex a-center j-center">
+            <p>今年はあと<span id="leftdays"></span>日です</p>
+        </section>
+    </main>
+    <aside>
+        <div class="badges googleplay" id="googleplay">
+            <img src="./images/google-play-badge.png" onclick="googleplay()">
+        </div>
+        <div class="badges appstore">
+            <img src="./images/appstore.svg" onclick="appstore()">
+        </div>
+        <div class="switchmode flex j-start a-center" id="switchmode">
+            <div class="buttun" id="darkmode" onclick="switchMode(this)"></div>
+        </div>
+        <i class="fa-solid fa-moon"></i>
+        <i class="fa-solid fa-sun"></i>
+    </aside>
+</body>
+</html>

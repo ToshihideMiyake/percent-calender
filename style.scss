@@ -1,0 +1,100 @@
+
+$barHeight:10%;
+$circle:400px;
+$numbercircle:calc(#{$circle} * 0.9);
+$color:#0fad79;
+$circle-bg:#a1a1a111;
+.variables{
+    --GraphAnime:"";
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    font-family: "Lato","Hiragino Sans";
+    font-weight: normal;
+    background-color: #343838;
+    color: #fffefe;
+}
+main{
+    width: 100%;
+    height: 100%;
+}
+.title{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-size: 25px;
+}
+.date,.leftover{
+    width: 100%;
+    height: $barHeight;
+    font-size: 40px;
+}
+.graph{
+    width: 100%;
+    height: calc(90% - #{$barHeight} * 3);
+}
+.chart{
+    width: $circle;
+    height: $circle;
+    border-radius: 50%;
+    background: var(--GraphAnime);
+}
+.badges{
+    img{
+        width: 150px;
+        height: auto;
+    }
+}
+.googleplay,.appstore{
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+}
+.googleplay{
+    transform: scale(1.15)translateY(-120%);
+}
+.number{
+    width: $numbercircle;
+    height: $numbercircle;
+    border-radius: 50%;
+    background-color: #343838;
+    font-size: 80px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+.switchmode{
+    position: absolute;
+    top: 70px;
+    right: 100px;
+    width: 50px;
+    height: 8px;
+    border-radius: 50px;
+    background-color: #818181;
+    .buttun{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #fff;
+        transition: all 300ms ease;
+    }
+}
+.lightmode{
+    transform: translateX(calc(50px - 100%));
+    transition: all 300ms ease;
+}
+.fa-moon,.fa-sun{
+    position: absolute;
+    top: 70px;
+    font-size: 20px;
+}
+.fa-moon{
+    right: 150px;
+    transform: translate(-50%,-25%);
+}
+.fa-sun{
+    right: 100px;
+    transform: translate(150%,-25%);
+}
