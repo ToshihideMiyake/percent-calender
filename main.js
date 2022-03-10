@@ -28,6 +28,17 @@ window.onload=()=>{
     document.getElementById("date").innerHTML=date;
     document.getElementById("leftdays").innerHTML=365 - PassedDays;
     document.getElementById("number").style.color=circleBarColor;
+    if(localStorage.getItem("mode")=="lightmode"){
+        circleBarColor=LightBarColor;
+        circleColor=LightColor;
+        document.getElementsByClassName("buttun")[0].id="lightmode";
+        Array.from(document.getElementsByClassName("bg-color")).forEach(ele=>ele.style.backgroundColor="#e0ded7");
+        document.getElementById("body").style.color="#5a5a59";
+        document.getElementById("number").style.color=LightBarColor;
+        document.getElementsByClassName("buttun")[0].classList.add("lightmode");
+    }else{
+        console.log(localStorage.getItem("mode"));
+    }
     function sleep(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
     }
@@ -73,12 +84,14 @@ function switchMode(e){
         document.getElementById("body").style.color="#5a5a59";
         document.getElementById("chart").style.setProperty("--GraphAnime","conic-gradient("+LightBarColor+" 0%,"+LightBarColor+" "+Rate+"%, "+LightColor+" "+Rate+"%, "+LightColor+" 100%)");
         document.getElementById("number").style.color=LightBarColor;
+        localStorage.setItem("mode","lightmode");
     }else{
         e.id="darkmode";
         Array.from(document.getElementsByClassName("bg-color")).forEach(ele=>ele.style.backgroundColor="#343838");
         document.getElementById("body").style.color="#fff";
-        document.getElementById("chart").style.setProperty("--GraphAnime","conic-gradient("+circleBarColor+" 0%,"+circleBarColor+" "+Rate+"%, "+circleColor+" "+Rate+"%, "+circleColor+" 100%)");
-        document.getElementById("number").style.color=circleBarColor;
+        document.getElementById("chart").style.setProperty("--GraphAnime","conic-gradient(#cefeae 0%,#cefeae "+Rate+"%, #5a5a59 "+Rate+"%, #5a5a59 100%)");
+        document.getElementById("number").style.color="#cefeae";
+        localStorage.setItem("mode","darkmode");
     }
    e.classList.toggle("lightmode");
 }
@@ -90,3 +103,13 @@ function appstore(){
     alert("準備中");
     // window.open("","_blank");
 }
+setTimeout(()=>{
+    var Now=new Date;
+    var NowHour=Now.getHours();
+    var NowMinutes=Now.getMinutes();
+    if((NowHour==NowMinutes)&&(NowHour==0)){
+        location.reload();
+    }else{
+        console.log(NowHour);
+    }
+},60000)
