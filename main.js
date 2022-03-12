@@ -1,9 +1,9 @@
-var Today=new Date;
-var Year=Today.getFullYear();
-var Month=Today.getMonth();
-var date=Today.getDate();
-var Day=Today.getDay();
-var February="";
+const Today=new Date;
+const Year=Today.getFullYear();
+const Month=Today.getMonth();
+const date=Today.getDate();
+const Day=Today.getDay();
+let February="";
 if(Year % 4 == 0 && (Year % 100!=0 || Year % 400==0)){
     // 閏年
     February=29;
@@ -11,17 +11,17 @@ if(Year % 4 == 0 && (Year % 100!=0 || Year % 400==0)){
 else{
     February=28;
 }
-var Days=[31, February, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-var PassedDays=date;
+const Days=[31, February, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+let PassedDays=date;
 for(let i=0;i<Month;i++){
     PassedDays+=Days[i];
 }
-var Rate=Math.trunc(PassedDays / 365 * 100);
+const Rate=Math.trunc(PassedDays / 365 * 100);
 console.log(Rate);
-var circleColor="#5a5a59";
-var circleBarColor="#cefeae";
-var LightBarColor="#0fad79";
-var LightColor="#a1a1a13b";
+let circleColor="#5a5a59";
+let circleBarColor="#cefeae";
+const LightBarColor="#0fad79";
+const LightColor="#a1a1a13b";
 window.onload=()=>{
     Array.from(document.getElementsByClassName("year")).forEach(e=>e.innerHTML=Year);
     document.getElementById("month").innerHTML=Month+1;
@@ -104,9 +104,9 @@ function appstore(){
     // window.open("","_blank");
 }
 setTimeout(()=>{
-    var Now=new Date;
-    var NowHour=Now.getHours();
-    var NowMinutes=Now.getMinutes();
+    const Now=new Date;
+    const NowHour=Now.getHours();
+    const NowMinutes=Now.getMinutes();
     if((NowHour==NowMinutes)&&(NowHour==0)){
         location.reload();
     }else{
