@@ -4,6 +4,8 @@ $circle:400px;
 $numbercircle:calc(#{$circle} * 0.9);
 $color:#0fad79;
 $circle-bg:#a1a1a111;
+$qrcodesize:150px;
+$qrcodeposition:50px;
 .variables{
     --GraphAnime:"";
 }
@@ -20,6 +22,9 @@ body{
 main{
     width: 100%;
     height: 100%;
+}
+figcaption{
+    text-align: center;
 }
 .title{
     position: absolute;
@@ -49,10 +54,20 @@ main{
     }
 }
 .googleplay,.appstore{
-    position: absolute;
-    left: 50px;
-    bottom: 50px;
+    display: none;
 }
+.qrcode{
+    width: $qrcodesize;
+    height: $qrcodesize;
+    position: absolute;
+    left:$qrcodeposition;
+    bottom: $qrcodeposition;
+    figure,img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
 .googleplay{
     transform: scale(1.15)translateY(-120%);
 }
@@ -97,4 +112,14 @@ main{
 .fa-sun{
     right: 100px;
     transform: translate(150%,-25%);
+}
+@media screen and (max-width:1000px) {
+    .googleplay,.appstore{
+        position: absolute;
+        left: $qrcodeposition;
+        bottom: $qrcodeposition;
+    }
+    .qrcode{
+        display: none;
+    }
 }

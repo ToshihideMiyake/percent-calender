@@ -96,12 +96,10 @@ function switchMode(e){
    e.classList.toggle("lightmode");
 }
 function googleplay(){
-    alert("準備中");
-    // window.open("","_blank");
+    window.open("https://play.google.com/store/apps/details?id=com.percentcalender&hl=ja&gl=US","_blank");
 }
 function appstore(){
-    alert("準備中");
-    // window.open("","_blank");
+    window.open("https://apps.apple.com/jp/app/%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC-%E7%B5%8C%E9%81%8E%E6%97%A5%E6%95%B0%E3%81%8C%E4%B8%80%E7%9B%AE%E3%81%A7%E3%82%8F%E3%81%8B%E3%82%8B%E5%B9%B4%E9%96%93-%E6%9C%88%E9%96%93%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/id1629199342?platform=iphone","_blank");
 }
 setTimeout(()=>{
     const Now=new Date;
